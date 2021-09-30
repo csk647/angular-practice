@@ -1,0 +1,26 @@
+<div>
+    <h3>bye css 적용</h3>
+
+    <p>bye works!</p>
+
+    <h3>bye 이미지 적용 2가지 방법</h3>
+    <h5>binding the src property fo an image(프로퍼티를 이용한 이미지 바인딩):</h5>
+    <img [src]="angularImgUrl">
+    <h5>Using bind- syntax(syntax를 이용한 이미지 바인딩):</h5>
+    <img bind-src="angularImgUrl">
+
+    <h3>table </h3>
+    <table border="1">
+        <!-- border 뒤에 숫자가 px(두께)를 의미 하는 듯 -->
+        <tr>
+            <td>Column 1</td>
+            <td>Column 2</td>
+        </tr>
+        <!-- colSpan은 camel case로 작성해야 한다. -->
+        <tr>
+            <td [colSpan]="2">Span 2 columns</td>
+        </tr>
+    </table>
+    <h3>button disabled</h3>
+    <button [disabled]="true">Disabled Button</button>
+</div>

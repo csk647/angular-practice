@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ByeComponent implements OnInit {
   angularImgUrl = '../../assets/angularLogo.png';
+  evilTitle = '이걸 설정하면 되나?'
 
   constructor() { }
 

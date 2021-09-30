@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import { ByeComponent } from './bye/bye.component';
+import { ItemListComponent } from './item-list/item-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloComponent,
-    ByeComponent
+    ByeComponent,
+    ItemListComponent
   ],
   imports: [
     BrowserModule,

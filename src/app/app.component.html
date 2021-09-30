@@ -13,4 +13,5 @@
     <input type="text" [(ngModel)]="mydata">
     <div [ngClass]='getClass()'>{{mydata}}</div>
     <button (click)="changeView()">btn</button>
+    <app-item-list [childCurrentItems]="currentItems"></app-item-list>
 </div>

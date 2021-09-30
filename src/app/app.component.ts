@@ -15,6 +15,15 @@ export class AppComponent {
 
   showArray: Array<string>;
 
+  //app에서 hello로 넘길 item
+  currentItems = [{
+    id: 36,
+    name: 'aeri'
+  }, { 
+    id: 34, 
+    name: 'coinone' 
+  }]
+
   constructor() {
     this.showArray = array;
   }

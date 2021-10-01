@@ -1,0 +1,7 @@
+<p>assignName : </p>
+<input type="text" [formControl]="assignName">
+<br>
+<p>Value : {{assignName.value}}</p>
+<p>
+    <button (click)="updateName($event)">Update Name</button>
+</p>

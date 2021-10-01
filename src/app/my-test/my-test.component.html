@@ -1,0 +1,16 @@
+<h2>클릭 시 state +1</h2>
+<button (click)='clickAfterPrint($event)'>{{title}} <-당신이 입력한 변수 title </button>
+<div *ngFor="let item of showArray">{{item}}</div>
+<br>
+<br>
+<app-hello [received]="send"></app-hello>
+<br>
+<br>
+<app-bye></app-bye>
+<br><br>
+<h3>app input / state에 따른 class변화</h3>
+<input type="text" [(ngModel)]="mydata">
+<div [ngClass]='getClass()'>{{mydata}}</div>
+<button (click)="changeView()">btn</button>
+<app-item-list [childCurrentItems]="currentItems"></app-item-list>
+<br>

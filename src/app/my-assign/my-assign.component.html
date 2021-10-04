@@ -1,7 +1,12 @@
 <h3>단순 formControl 사용</h3>
 <div>
-    <app-name-editor></app-name-editor>
+    <app-name-editor (outputName)="onReceiveFunc($event)" (outAssignName)="onReceiveForm($event)"></app-name-editor>
 </div>
+<h3>
+    app-name-editor에서 상위로 output한거 input 받가
+</h3>
+<div>단순 상태 바꾸기 : {{name}}</div>
+<div>input 값 가지고 오기 : {{formName}}</div>
 <h3>단순 여러개 formControl 사용</h3>
 <div>
     <app-several-forms></app-several-forms>

@@ -13,6 +13,8 @@ import { MyTestComponent } from './my-test/my-test.component';
 import { MyAssignComponent } from './my-assign/my-assign.component';
 import { EmitterTestComponent } from './emitter-test/emitter-test.component';
 import { SeveralFormsComponent } from './several-forms/several-forms.component';
+import { ServiceTestComponent } from './service-test/service-test.component';
+import { ServiceTestService } from './service-test.service';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { SeveralFormsComponent } from './several-forms/several-forms.component';
     MyAssignComponent,
     EmitterTestComponent,
     SeveralFormsComponent,
+    ServiceTestComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { SeveralFormsComponent } from './several-forms/several-forms.component';
     HttpClientModule,
     ReactiveFormsModule // formControl 쓸 때 appmodule에서 import 해주고 써야 함
   ],
-  providers: [],
+  providers: [ServiceTestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

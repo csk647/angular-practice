@@ -23,6 +23,10 @@ export class NameEditorComponent {
     this.outAssignName.emit(this.assignName)
   }
 
+  getName(){
+    return this.assignName;
+  }
+
   ngOnInit(): void {
   }
 

@@ -1,2 +1,9 @@
-<p>service-test works!</p>
-<!-- <p>{{name}}</p> -->
+<p>using service.nameList & service.clear</p>
+<div *ngFor="let name of service.nameList">{{name}}</div>
+<button (click)="addName()">btn</button>
+<button (click)="service.clear()">clear btn</button>
+
+<p>using component's service</p>
+<div *ngFor="let name of nameList">{{name}}</div>
+<button (click)="addName()">btn</button>
+<button (click)="delete()">clear btn</button>

@@ -1,7 +1,7 @@
 <p>assignName : </p>
-<input type="text" [formControl]="assignName">
+<input type="text" [formControl]="assignName" (input)="updateName($event)">
 <br>
 <p>Value : {{assignName.value}}</p>
 <p>
-    <button (click)="updateName($event)">Update Name</button>
+    <!-- <button (click)="updateName($event)">Update Name</button> -->
 </p>

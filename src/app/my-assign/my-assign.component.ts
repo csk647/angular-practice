@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-my-assign',
   templateUrl: './my-assign.component.html',
   styleUrls: ['./my-assign.component.css']
 })
+
 export class MyAssignComponent implements OnInit {
   name="init-name";
-  formName=""
+  formName="";
 
   constructor() { }
 

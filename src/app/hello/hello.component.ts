@@ -14,8 +14,7 @@ export class HelloComponent implements OnInit {
   text: string = 'firstStudy';
 
   showArray: Array<string>;
-  @Input()
-  received: string = '';
+  @Input()received: string = '';
 
   constructor() {
     this.showArray = array;
@@ -25,31 +24,31 @@ export class HelloComponent implements OnInit {
     //시작하자마자
     console.log('hello 시작!')
   }
-  ngOnChanges(): void {
-    console.log('바뀜 감지 hello')
-  }
-  ngDoCheck(): void {
-    console.log('do check hello')
-  }
-  ngAfterContentInit(): void {//3번
-    console.log('afterContentInit hello')
-  }
+  // ngOnChanges(): void {
+  //   console.log('바뀜 감지 hello')
+  // }
+  // ngDoCheck(): void {
+  //   console.log('do check hello')
+  // }
+  // ngAfterContentInit(): void {//3번
+  //   console.log('afterContentInit hello')
+  // }
 
-  ngAfterContentChecked(): void { //4번
-    console.log('afterContentChecked hello')
-  }
+  // ngAfterContentChecked(): void { //4번
+  //   console.log('afterContentChecked hello')
+  // }
 
-  ngAfterViewInit(): void { //5번 hello와 bye를 돌고 옴
-    console.log('afterViewInit hello')
-  }
+  // ngAfterViewInit(): void { //5번 hello와 bye를 돌고 옴
+  //   console.log('afterViewInit hello')
+  // }
 
-  ngAfterViewChecked(): void { //6번 5번 다음으로 
-    console.log('afterViewChecked hello')
-  }
+  // ngAfterViewChecked(): void { //6번 5번 다음으로 
+  //   console.log('afterViewChecked hello')
+  // }
 
-  ngOnDestroy(): void {
-    console.log('onDestroy hello')
-  }
+  // ngOnDestroy(): void {
+  //   console.log('onDestroy hello')
+  // }
   // 클릭했을 경우
   public clickAtHello(): void {
     this._innerFunc();

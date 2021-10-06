@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { CanActivate, CanActivateChild } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,11 @@ export class AuthGuardService {
     alert('can load!')
     return true
   }
-  canActivate() {
+  CanActivate() {
     alert('can activate again!')
     return true
   }
-  canActivateChild() {
+  CanActivateChild() {
     alert('can activate child?');
     return true;
   }

@@ -13,23 +13,25 @@ export class SeveralFormsComponent {
     firstName: ['', Validators.required],
     lastName: [''],
     address: this.fb.group({
-      street: [''],
+      street: ['',Validators.required], //required는 필수 입력. 1자라도 입력되어야 함
       city: [''],
       state: [''],
       zipcode: ['']
     }),
-    aliases: this.fb.array([
-      this.fb.control('')
+    aliases: this.fb.array([ // 폼 배열로 선언
+      this.fb.control('') // 동적으로 추가되기 전까지는 폼 컨트롤 1개로 구성
     ])
   }); 
 
   get aliases() { 
     return this.profileForm.get('aliases') as FormArray;
+    // 폼 컨트롤을 참조하기 위해 get() 메소드를 사용하면 AbstactControl 타입으로 폼 컨트롤을 받는다.
+    // 공통메소드를 사용한다면 이대로 활용. FormArray에 해당되는 메소드를 사용하려면 타입 캐스팅 필수.
   }
   constructor(private fb: FormBuilder) { } //fb 가지고 오기
 
   updateProfile() {
-    this.profileForm.patchValue({
+    this.profileForm.patchValue({ // 완전 값을 바꿔버림. 여기에서 안주는 필드는 초기값으로 돌아가는 듯.
       firstName: 'aeri',
       address: {
         street: '123 wall street'
@@ -38,7 +40,7 @@ export class SeveralFormsComponent {
   };
 
   addAlias() {
-    this.aliases.push(this.fb.control(''));
+    this.aliases.push(this.fb.control('')); //배열의 새로운 form 생성
   }
 
   onSubmit() {
@@ -46,42 +48,3 @@ export class SeveralFormsComponent {
     console.warn(this.profileForm.value)
   }
 }
-
-
-//블로그 방법
-
-// import { Component } from '@angular/core';
-// import { FormBuilder, Validators, FormArray, FormGroup } from '@angular/forms'; 
-// //1, FormGroup, Validators, FormBuilder를 import. Validators는 사용하지 않거나 
-// //template에서 validation을 처리한다면 호출하지 않아도 된다.
-
-// @Component({
-//   selector: 'app-several-forms',
-//   templateUrl: './several-forms.component.html',
-//   styleUrls: ['./several-forms.component.css']
-// })
-// export class SeveralFormsComponent {
-//   profileForm: FormGroup;
-//   //template에서 작성한 FormGroup명을 변수로 선언한다.
-
-//   constructor(private fb: FormBuilder) { // FormBuilder를 DI로 가지고 온다
-//     this.profileForm = this.fb.group({ //onInit이나 constructor에 formgroup을 정의한다.
-//       item: ['', [Validators.required]]
-//     })
-//     //이 때, 사용되는 모든 form의 formControlName을 입력한다.
-//     //''부분은 초기값이 있으면 입력하고 없으면 비워둔다.
-//     //Validation은 배열 형태로 구성하되 없으면 빈 배열로 두어도 된다.
-
-//     this.profileForm.valueChanges.subscribe(observer => {
-//       console.log(this.profileForm.valid)
-//     }) // valueChanges 이 부분은 form값을 subscribe하여 값 변화를 실시간으로 체크하는 부분.
-//   }
-
-//   submit(e: Event) {
-//     const { item } = this.profileForm.controls;
-//     console.log(item.value)
-//   } // form에 입력 이후 validation체크나 데이터를 가공하는 등의 처리를 한다.
-//   ngOnInit(): void {
-//   }
-
-// }

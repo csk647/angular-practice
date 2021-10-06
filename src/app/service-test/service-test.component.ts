@@ -12,7 +12,9 @@ export class ServiceTestComponent implements OnInit {
 
   constructor(
     public service:ServiceTestService
-  ) {}
+  ) {
+    this.nameList = this.service.nameList;
+  }
 
    ngOnInit():void{
     this.getName();
@@ -25,18 +27,12 @@ export class ServiceTestComponent implements OnInit {
 
    addName(){
      this.service.add('new!!')
-    //  this.service.getName().subscribe({
-    //   next(name){ // next를 쓰면 값이 나오긴 하는데 가지고 와서 nameList에 넣을수가 없네
-    //     console.log('current name', name);
-    //     // this.nameList = name;
-    //   }
-    // })
-
    }
 
    delete(){
-    //  this.service.clear();
-    this.nameList=[];
+     this.service.clear();
+     console.log(this.nameList)
+     console.log(this.service.nameList)
    }
  
 

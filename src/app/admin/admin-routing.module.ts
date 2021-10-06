@@ -1,12 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminEditComponent } from '../admin-edit/admin-edit.component';
 
 import { AdminComponent } from './admin.component';
+
 
 const routes: Routes = [
     {
         path:'',
-        component: AdminComponent
+        // component: AdminComponent,
+        redirectTo:'edit'
+    },
+    {
+        path: '',
+        // canActivateChild: [AuthGuard],
+        children: [
+            { path: 'view', loadChildren: () => import('../admin-view/admin-view.module').then(mod => mod.AdminViewModule) },
+            { path: 'edit', component: AdminEditComponent }
+        ]
     }
 ];
 

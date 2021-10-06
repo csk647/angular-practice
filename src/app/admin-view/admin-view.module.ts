@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common'
 import { AdminViewRoutingModule } from './admin-view-routing.module';
 
 import { AdminViewComponent } from './admin-view.component';
@@ -11,9 +12,9 @@ import { AdminViewComponent } from './admin-view.component';
   imports: [
     FormsModule,
     // ReactiveFormsModule, // formControl 쓸 때 appmodule에서 import 해주고 써야 함,
-    AdminViewRoutingModule
+    AdminViewRoutingModule,
+    CommonModule
   ],
   providers: [],
-  bootstrap: [AdminViewComponent]
 })
-export class AdminModule { }
+export class AdminViewModule { }

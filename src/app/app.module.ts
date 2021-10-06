@@ -14,9 +14,7 @@ import { MyAssignComponent } from './my-assign/my-assign.component';
 import { EmitterTestComponent } from './emitter-test/emitter-test.component';
 import { SeveralFormsComponent } from './several-forms/several-forms.component';
 import { ServiceTestComponent } from './service-test/service-test.component';
-import { AdminModule } from './admin/admin.module';
-import { AdminViewComponent } from './admin-view/admin-view.component';
-import { AdminEditComponent } from './admin-edit/admin-edit.component'
+import { AuthGuardService } from './auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -30,8 +28,6 @@ import { AdminEditComponent } from './admin-edit/admin-edit.component'
     EmitterTestComponent,
     SeveralFormsComponent,
     ServiceTestComponent,
-    AdminViewComponent,
-    AdminEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,9 +35,9 @@ import { AdminEditComponent } from './admin-edit/admin-edit.component'
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule, // formControl 쓸 때 appmodule에서 import 해주고 써야 함,
-    AdminModule
+    
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

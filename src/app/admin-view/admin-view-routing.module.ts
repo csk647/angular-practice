@@ -5,7 +5,7 @@ import { AdminViewComponent } from './admin-view.component';
 
 const routes: Routes = [
     {
-        path:'view',
+        path:'',
         component: AdminViewComponent
     }
 ];

@@ -9,21 +9,27 @@ import { NameEditorComponent } from './name-editor/name-editor.component';
 })
 
 export class ServiceTestService {
-  nameList: string[] = [];
+  nameList: string[] = ['aeri'];
 
   constructor() { }
 
   add(name:string){
     this.nameList.push(name)
+    console.log(this.nameList)
   }
 
-  getName():Observable<string[]>{
+  setData(data:string){
+    this.nameList = [...data];
+  }
+
+  getName(){
     const names = of(this.nameList);
     return names;
   }
  
   clear(){
     this.nameList = [];
+    console.log(this.nameList)
   }
 
 }

@@ -1,0 +1,7 @@
+<p>observable-data works!</p>
+<div>{{dateData$ | asyncData}}</div>
+<div>optional chaining과 async : {{(data$ | async)?.key}}</div>
+<ng-container *ngIf="data$ | async as item">
+    <p>ng-container와 ngIf 사용한 key : {{item.key}}</p>
+</ng-container>
+<p>convert pipe 커스텀(?) : {{1000 | convert:'m'}}</p>

@@ -17,6 +17,9 @@ import { ServiceTestComponent } from './service-test/service-test.component';
 import { AuthGuardService } from './auth-guard.service';
 import { StructorDirectiveTestComponent } from './structor-directive-test/structor-directive-test.component';
 import { SharedModule } from './shared/shared.module';
+import { ConvertPipe } from './pipes/convert.pipe';
+import { ObservableDataComponent } from './observable-data/observable-data.component';
+import { AsyncDataPipe } from './pipes/asyncData.pipe';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { SharedModule } from './shared/shared.module';
     SeveralFormsComponent,
     ServiceTestComponent,
     StructorDirectiveTestComponent,
+    AsyncDataPipe,
+    ConvertPipe,
+    ObservableDataComponent
   ],
   imports: [
     BrowserModule, // browsermodule은 최상위 한 곳에만 import 하면 된다. 나머지엔 common module import

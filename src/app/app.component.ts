@@ -10,6 +10,7 @@ import { debounceTime } from 'rxjs/operators';
 export class AppComponent {
   myTest: boolean = false;
   clicks = new Subject;
+  miles: number=0;
 
   @Input() throttle!: Observable<void>;
   @Input() throttleTime?: number;
@@ -24,6 +25,11 @@ export class AppComponent {
   }
   throttledClick(e: Event) {
     console.log('throttleClick',e)
+  }
+
+
+  oneMileChange(value:string){
+    this.miles = parseFloat(value)
   }
   // ngDoCheck(): void { //2번
   //   console.log('do check app')

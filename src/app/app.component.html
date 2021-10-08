@@ -15,9 +15,19 @@
     </li>
     <br>
     <button appPreventDoubleClick (throttledClick)="throttledClick($event)" [throttleTime]="2000">throttle test</button>
+    <app-observable-data></app-observable-data>
+    <br>
+    <!-- <div *ngIf="miles | convert: 'km' > 10"> -->
+    <!-- <div>{{miles | convert:'m', number:'1.0-2'}}</div> -->
+
+    <!-- </div> -->
     <!-- <app-my-test *ngIf="myTest"></app-my-test>
     <app-my-assign *ngIf="!myTest"></app-my-assign> -->
     <!-- <app-my-test></app-my-test> -->
     <!-- <app-my-assign></app-my-assign> -->
+    <div>pipe currency : {{10000 | currency}}</div>
+    <div>pipe uppercase : {{'nice' | uppercase}}</div>
+    <!-- <div>pipe custom : {{}}</div> -->
+
     <router-outlet></router-outlet>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { ServiceTestService } from '../service-test.service';
 
 @Component({
@@ -9,11 +10,11 @@ import { ServiceTestService } from '../service-test.service';
 })
 export class ServiceTestComponent implements OnInit {
   nameList:string[]=[];
-
+  
   constructor(
     public service:ServiceTestService
   ) {
-    this.nameList = this.service.nameList;
+    
   }
 
    ngOnInit():void{
@@ -21,18 +22,24 @@ export class ServiceTestComponent implements OnInit {
    }
 
    getName(){
-      this.service.getName().subscribe(names => this.nameList = names)
+     this.nameList = this.service.getName();
+     console.log(this.nameList);
+   //   this.service.getName().subscribe(names => this.nameList = names)
       // 생성 subscribe()한 옵저버블을 실행 및 알림 수신. 
    }
 
    addName(){
-     this.service.add('new!!')
+     this.service.add('new!!');
+   
+     //this.service.add('new!!')
    }
 
    delete(){
-     this.service.clear();
-     console.log(this.nameList)
-     console.log(this.service.nameList)
+     
+     this.nameList = this.service.clear();
+     //this.getName();
+     //console.log(this.nameList)
+     //console.log(this.service.nameList)
    }
  
 

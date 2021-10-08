@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { of, pipe, Subject, interval, Observable } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +9,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   myTest: boolean = false;
+  clicks = new Subject;
 
+  @Input() throttle!: Observable<void>;
+  @Input() throttleTime?: number;
   constructor() {
   }
   ngOnInit(): void { //1번
     console.log('app component 시작!')
+  }
+  log(e: Event) {
+    console.log(e)
+    // this.clicks.pipe(debounceTime(1000)).subscribe(e => alert('hi'))
+  }
+  throttledClick(e: Event) {
+    console.log('throttleClick',e)
   }
   // ngDoCheck(): void { //2번
   //   console.log('do check app')
@@ -42,12 +54,12 @@ export class AppComponent {
   // }
 
 
-  
-   showMyTest() {
+
+  showMyTest() {
     return this.myTest = true;
   }
 
-   showMyAssign() {
+  showMyAssign() {
     return this.myTest = false;
   }
 }

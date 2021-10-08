@@ -15,6 +15,8 @@ import { EmitterTestComponent } from './emitter-test/emitter-test.component';
 import { SeveralFormsComponent } from './several-forms/several-forms.component';
 import { ServiceTestComponent } from './service-test/service-test.component';
 import { AuthGuardService } from './auth-guard.service';
+import { StructorDirectiveTestComponent } from './structor-directive-test/structor-directive-test.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -28,14 +30,15 @@ import { AuthGuardService } from './auth-guard.service';
     EmitterTestComponent,
     SeveralFormsComponent,
     ServiceTestComponent,
+    StructorDirectiveTestComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, // browsermodule은 최상위 한 곳에만 import 하면 된다. 나머지엔 common module import
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule, // formControl 쓸 때 appmodule에서 import 해주고 써야 함,
-    
+    SharedModule
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]

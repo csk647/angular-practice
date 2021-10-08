@@ -8,8 +8,9 @@ import { AdminComponent } from './admin.component';
 const routes: Routes = [
     {
         path:'',
-        // component: AdminComponent,
-        redirectTo:'edit'
+        component: AdminComponent,
+        // redirectTo:'edit',
+        // pathMatch: 'full'
     },
     {
         path: '',

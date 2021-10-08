@@ -17,10 +17,10 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if(this.authService){
-        console.log('canActivate true')
+        console.warn('canActivate true')
         return true;
       } else {
-      console.log('canActivate false');
+      console.warn('canActivate false');
         this.router.navigate([''])
         return false
       }
@@ -30,10 +30,10 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       //어드민이면 보여준다.
       // if(!this.authService.isAdminUser()){ /
-      //   alert('you are not allowed to view this page');
+      //   console.warn('you are not allowed to view this page');
       //   return false;
       // }
-      console.log('canActivateChild 확인!')
+      console.warn('canActivateChild 확인!')
     return true;
   }
   canDeactivate( // 페이지를 떠나고 싶은지 떠나고 싶지 않은지
@@ -46,7 +46,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    console.log('canload 확인!')
+    console.warn('canload 확인!')
     return true;
   }
 }
